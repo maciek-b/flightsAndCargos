@@ -1,0 +1,37 @@
+[
+  {
+    "flightId": 0,
+    "flightNumber": 9202,
+    "departureAirportIATACode": "YYZ",
+    "arrivalAirportIATACode": "LEW",
+    "departureDate": "2015-05-04"
+  },
+  {
+    "flightId": 1,
+    "flightNumber": 5778,
+    "departureAirportIATACode": "YYZ",
+    "arrivalAirportIATACode": "KRK",
+    "departureDate": "2016-04-07"
+  },
+  {
+    "flightId": 2,
+    "flightNumber": 4464,
+    "departureAirportIATACode": "YYZ",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2015-10-31"
+  },
+  {
+    "flightId": 3,
+    "flightNumber": 6892,
+    "departureAirportIATACode": "YYT",
+    "arrivalAirportIATACode": "KRK",
+    "departureDate": "2020-01-09"
+  },
+  {
+    "flightId": 4,
+    "flightNumber": 1656,
+    "departureAirportIATACode": "ANC",
+    "arrivalAirportIATACode": "PPX",
+    "departureDate": "2020-10-16"
+  }
+]
