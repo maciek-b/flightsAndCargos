@@ -1,37 +1,37 @@
 [
   {
     "flightId": 0,
-    "flightNumber": 9202,
-    "departureAirportIATACode": "YYZ",
-    "arrivalAirportIATACode": "LEW",
-    "departureDate": "2015-05-04"
+    "flightNumber": 8185,
+    "departureAirportIATACode": "SEA",
+    "arrivalAirportIATACode": "MIT",
+    "departureDate": "2019-10-12T01:29:33 -02:00"
   },
   {
     "flightId": 1,
-    "flightNumber": 5778,
-    "departureAirportIATACode": "YYZ",
-    "arrivalAirportIATACode": "KRK",
-    "departureDate": "2016-04-07"
+    "flightNumber": 9507,
+    "departureAirportIATACode": "LAX",
+    "arrivalAirportIATACode": "LEW",
+    "departureDate": "2018-07-05T01:53:33 -02:00"
   },
   {
     "flightId": 2,
-    "flightNumber": 4464,
-    "departureAirportIATACode": "YYZ",
-    "arrivalAirportIATACode": "GDN",
-    "departureDate": "2015-10-31"
+    "flightNumber": 6767,
+    "departureAirportIATACode": "YYT",
+    "arrivalAirportIATACode": "PPX",
+    "departureDate": "2014-06-01T08:39:40 -02:00"
   },
   {
     "flightId": 3,
-    "flightNumber": 6892,
-    "departureAirportIATACode": "YYT",
-    "arrivalAirportIATACode": "KRK",
-    "departureDate": "2020-01-09"
+    "flightNumber": 2992,
+    "departureAirportIATACode": "SEA",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2017-06-09T06:09:06 -02:00"
   },
   {
     "flightId": 4,
-    "flightNumber": 1656,
-    "departureAirportIATACode": "ANC",
-    "arrivalAirportIATACode": "PPX",
-    "departureDate": "2020-10-16"
+    "flightNumber": 7377,
+    "departureAirportIATACode": "YYZ",
+    "arrivalAirportIATACode": "LEW",
+    "departureDate": "2019-02-02T02:50:05 -01:00"
   }
 ]

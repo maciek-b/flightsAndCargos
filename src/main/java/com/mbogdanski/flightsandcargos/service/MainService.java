@@ -15,23 +15,23 @@ import com.mbogdanski.flightsandcargos.domain.WeightUnit;
 import com.mbogdanski.flightsandcargos.dto.FlightResponse;
 import com.mbogdanski.flightsandcargos.dto.WeightResponse;
 import com.mbogdanski.flightsandcargos.repository.CargoRepository;
-import com.mbogdanski.flightsandcargos.repository.FlightRepository;
+import com.mbogdanski.flightsandcargos.repository.CustomFlightRepository;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
 public class MainService {
 
-  private final FlightRepository flightRepository;
+  private final CustomFlightRepository flightRepository;
   private final CargoRepository cargoRepository;
 
   public WeightResponse calcWeight(final Integer flightNumber, final LocalDate date) {
-    final Optional<Flight> flight = flightRepository.findByFlightNumberAndDepartureDate(flightNumber, date);
+    final List<Flight> flight = flightRepository.findByFlightNumberAndDepartureDate(flightNumber, date);
     if (flight.isEmpty()) {
       return new WeightResponse(0, 0);
     }
 
-    final Optional<Cargo> cargo = cargoRepository.findById(flight.get().getFlightId());
+    final Optional<Cargo> cargo = cargoRepository.findById(flight.get(0).getFlightId());
     if (cargo.isEmpty()) {
       return new WeightResponse(0, 0);
     }
