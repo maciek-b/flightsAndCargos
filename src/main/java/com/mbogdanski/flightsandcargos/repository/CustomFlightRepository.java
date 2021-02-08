@@ -19,18 +19,22 @@ public class CustomFlightRepository {
   public List<Flight> findByFlightNumberAndDepartureDate(final Integer number, final LocalDate date) {
     final List<Flight> flights = flightRepository.findByFlightNumber(number);
 
-    return flights.stream().filter(flight -> flight.getDepartureDate().toLocalDate().equals(date)).collect(toList());
+    return filterByDate(flights, date);
   }
 
   public List<Flight> findByDepartureAirportAndDepartureDate(final String code, final LocalDate date) {
     final List<Flight> flights = flightRepository.findByDepartureAirport(code);
 
-    return flights.stream().filter(flight -> flight.getDepartureDate().toLocalDate().equals(date)).collect(toList());
+    return filterByDate(flights, date);
   }
 
   public List<Flight> findByArrivalAirportAndDepartureDate(final String code, final LocalDate date) {
     final List<Flight> flights = flightRepository.findByArrivalAirport(code);
 
+    return filterByDate(flights, date);
+  }
+
+  private List<Flight> filterByDate(final List<Flight> flights, final LocalDate date) {
     return flights.stream().filter(flight -> flight.getDepartureDate().toLocalDate().equals(date)).collect(toList());
   }
 }
