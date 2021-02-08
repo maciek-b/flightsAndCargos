@@ -6,10 +6,9 @@ import static com.mbogdanski.flightsandcargos.TestConstants.ARRIVING_FLIGHT_2;
 import static com.mbogdanski.flightsandcargos.TestConstants.DATE;
 import static com.mbogdanski.flightsandcargos.TestConstants.DEPARTING_FLIGHT;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.After;
 import org.junit.Before;
@@ -29,6 +28,8 @@ public class FlightRepositoryTest {
 
   @Autowired
   private FlightRepository flightRepository;
+  @Autowired
+  private CustomFlightRepository customFlightRepository;
 
   @Before
   public void setUp() {
@@ -39,15 +40,15 @@ public class FlightRepositoryTest {
 
   @Test
   public void should_find_flight_by_flight_number_and_departure_date() {
-    final Optional<Flight> flight = flightRepository.findByFlightNumberAndDepartureDate(DEPARTING_FLIGHT.getFlightNumber(), DATE);
+    final List<Flight> flight = customFlightRepository.findByFlightNumberAndDepartureDate(DEPARTING_FLIGHT.getFlightNumber(), DATE.toLocalDate());
 
-    assertTrue(flight.isPresent());
-    assertEquals(DEPARTING_FLIGHT, flight.get());
+    assertFalse(flight.isEmpty());
+    assertEquals(DEPARTING_FLIGHT, flight.get(0));
   }
 
   @Test
   public void should_find_departing_flights_by_airport_and_departure_date() {
-    final List<Flight> flights = flightRepository.findByDepartureAirportAndDepartureDate(AIRPORT, DATE);
+    final List<Flight> flights = customFlightRepository.findByDepartureAirportAndDepartureDate(AIRPORT, DATE.toLocalDate());
 
     assertEquals(1, flights.size());
     assertEquals(DEPARTING_FLIGHT, flights.get(0));
@@ -55,7 +56,7 @@ public class FlightRepositoryTest {
 
   @Test
   public void should_find_arriving_flights_by_airport_and_departure_date() {
-    final List<Flight> flights = flightRepository.findByArrivalAirportAndDepartureDate(AIRPORT, DATE);
+    final List<Flight> flights = customFlightRepository.findByArrivalAirportAndDepartureDate(AIRPORT, DATE.toLocalDate());
 
     assertEquals(2, flights.size());
     assertEquals(ARRIVING_FLIGHT_1, flights.get(0));

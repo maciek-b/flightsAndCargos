@@ -26,19 +26,19 @@ public class MainControllerTest {
 
   @Test
   public void should_calc_weight() {
-    when(mainService.calcWeight(DEPARTING_FLIGHT.getFlightNumber(), DATE)).thenReturn(new WeightResponse(1, 2));
+    when(mainService.calcWeight(DEPARTING_FLIGHT.getFlightNumber(), DATE.toLocalDate())).thenReturn(new WeightResponse(1, 2));
 
-    mainController.weight(DEPARTING_FLIGHT.getFlightNumber(), DATE);
+    mainController.weight(DEPARTING_FLIGHT.getFlightNumber(), DATE.toLocalDate());
 
-    verify(mainService).calcWeight(DEPARTING_FLIGHT.getFlightNumber(), DATE);
+    verify(mainService).calcWeight(DEPARTING_FLIGHT.getFlightNumber(), DATE.toLocalDate());
   }
 
   @Test
   public void should_get_flight_info() {
-    when(mainService.getFlightsInfo(AIRPORT, DATE)).thenReturn(new FlightResponse(1, 2, 3, 4));
+    when(mainService.getFlightsInfo(AIRPORT, DATE.toLocalDate())).thenReturn(new FlightResponse(1, 2, 3, 4));
 
-    mainController.flight(AIRPORT, DATE);
+    mainController.flight(AIRPORT, DATE.toLocalDate());
 
-    verify(mainService).getFlightsInfo(AIRPORT, DATE);
+    verify(mainService).getFlightsInfo(AIRPORT, DATE.toLocalDate());
   }
 }

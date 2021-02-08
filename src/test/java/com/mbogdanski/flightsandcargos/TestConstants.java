@@ -3,7 +3,7 @@ package com.mbogdanski.flightsandcargos;
 import static com.mbogdanski.flightsandcargos.domain.WeightUnit.kg;
 import static com.mbogdanski.flightsandcargos.domain.WeightUnit.lb;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.mbogdanski.flightsandcargos.domain.Cargo;
@@ -15,7 +15,8 @@ public class TestConstants {
 
 
   public static String AIRPORT = "GDA";
-  public static LocalDate DATE = LocalDate.of(2015, 11, 12);
+  //    public static LocalDate DATE = LocalDate.of(2015, 11, 12);
+  public static LocalDateTime DATE = LocalDateTime.of(2015, 11, 12, 3, 4, 5);
   public static final Flight DEPARTING_FLIGHT = Flight.builder()
       .flightId(1)
       .flightNumber(101)
